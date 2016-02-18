@@ -19,8 +19,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FacebookNewWrapper">
+    android:layout_height="match_parent">
+    <!--tools:context="com.csantella.fbwrapper.FacebookNewWrapper" -->
 
     <RelativeLayout
         android:id="@+id/webview_container"
@@ -28,22 +28,100 @@
         android:layout_height="match_parent">
 
         <!-- Our actual WebView -->
-        <com.danvelazco.fbwrapper.webview.FacebookWebView
+
+        <com.csantella.fbwrapper.webview.FacebookWebView
             android:id="@+id/webview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fadeScrollbars="true"
             android:focusable="true"
-            android:focusableInTouchMode="true" />
+            android:focusableInTouchMode="true"
+            android:layout_alignParentTop="true" />
 
         <!-- Progress bar used to show the loading progress -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/navBar"
+            android:clickable="true"
+            android:background="@color/blue_primary_dark">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:id="@+id/newsfeed_button"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/newsfeed_white"
+                android:nestedScrollingEnabled="false"
+                android:onClick="nfClick" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:id="@+id/friends_button"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/friends_white"
+                android:onClick="frClick" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:id="@+id/messages_button"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/messages_white"
+                android:nestedScrollingEnabled="false"
+                android:onClick="msgClick" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:id="@+id/notif_button"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/notif_white"
+                android:onClick="ntfClick" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:id="@+id/search_button"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/search_white"
+                android:onClick="scClick" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:id="@+id/settings_button"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/settings_white"
+                android:onClick="stClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/navBar"
+            android:background="@drawable/shadow"></LinearLayout>
+
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/webview_top_progress_bar"
             style="@style/Widget.Tinfoil.ProgressBar"
-            android:layout_marginTop="@dimen/webview_top_progress_bar_top_margin"
-            android:layout_alignParentTop="true"/>
+            android:layout_below="@+id/navBar"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="-5dp" />
 
     </RelativeLayout>
 

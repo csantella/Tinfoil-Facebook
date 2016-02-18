@@ -15,7 +15,7 @@
     limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.danvelazco.fbwrapper">
+          package="com.csantella.fbwrapper">
     <!-- versionCode and versionName will be populated by build.gradle -->
 
     <uses-permission
@@ -38,12 +38,12 @@
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:largeHeap="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.Tinfoil">
 
         <activity
-            android:name="com.danvelazco.fbwrapper.FbWrapper"
+            android:name="com.csantella.fbwrapper.FbWrapper"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="standard"
             android:windowSoftInputMode="adjustResize"
@@ -131,13 +131,13 @@
         </activity>
 
         <activity
-            android:name=".preferences.FacebookPreferences"
+            android:name="com.csantella.fbwrapper.preferences.FacebookPreferences"
             android:label="@string/app_name"
             android:theme="@style/Theme.Tinfoil.Preferences"
-            android:parentActivityName="com.danvelazco.fbwrapper.FbWrapper">
+            android:parentActivityName="com.csantella.fbwrapper.FbWrapper">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.danvelazco.fbwrapper.FbWrapper" />
+                android:value="com.csantella.fbwrapper.FbWrapper" />
         </activity>
 
     </application>

@@ -16,7 +16,8 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        versionCode 20150205
+        applicationId "com.csantella.fbwrapper"
+        versionCode 20160217
         versionName "1.7.5"
 
         minSdkVersion rootProject.ext.minSdkVersion
